@@ -5,7 +5,7 @@ authors = ["Héctor Ramón Jiménez <hector0193@gmail.com>"]
 edition = "2021"
 publish = false
 
-[dev-dependencies.iced]
+[dependencies.iced]
 git = "https://github.com/iced-rs/iced"
 default-features = false
 features = ["wgpu", "tiny-skia", "web-colors", "thread-pool", "smol"]
