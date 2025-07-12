@@ -36,10 +36,10 @@ pub fn main() -> iced::Result {
      } else {
          println!("**ERROR {} get_winsize: {}", errcode, errstring);
      }
-     iced::application(Windirparse::title, Windirparse::update, Windirparse::view)
+     iced::application(Windirparse::new, Windirparse::update, Windirparse::view)
         .window_size((widthxx, heightxx))
         .theme(Windirparse::theme)
-        .run_with(Windirparse::new)
+        .run()
 
 }
 
