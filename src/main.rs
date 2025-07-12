@@ -37,10 +37,10 @@ pub fn main() -> iced::Result {
 //     } else {
 //         println!("**ERROR {} get_winsize: {}", errcode, errstring);
      }
-     iced::application(Hdbkmd5sum::title, Hdbkmd5sum::update, Hdbkmd5sum::view)
+     iced::application(Hdbkmd5sum::new, Hdbkmd5sum::update, Hdbkmd5sum::view)
         .window_size((widthxx, heightxx))
         .theme(Hdbkmd5sum::theme)
-        .run_with(Hdbkmd5sum::new)
+        .run()
 }
 
 struct Hdbkmd5sum {
