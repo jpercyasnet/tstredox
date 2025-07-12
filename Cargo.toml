@@ -9,3 +9,6 @@ publish = false
 git = "https://github.com/iced-rs/iced"
 default-features = false
 features = ["wgpu", "tiny-skia", "web-colors", "thread-pool", "smol"]
+
+[dependencies]
+rfd = { version = "^0", default-features = false }
