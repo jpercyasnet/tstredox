@@ -1,5 +1,5 @@
 // use rfd::FileDialog;
-use native_dialog::FileDialog;
+use native_dialog::DialogBuilder;
 use std::path::{Path};
 pub fn inputpress (inputval: String) -> (u32, String, String) {
      let errcode: u32;
@@ -10,9 +10,10 @@ pub fn inputpress (inputval: String) -> (u32, String, String) {
      } else {
          new_input = "/".to_string();
      }
-     let newfile = FileDialog::new()
+     let newfile = DialogBuilder::file()
         .set_location(&new_input)
-        .show_open_single_dir()
+        .open_single_dir()
+        .show()
         .unwrap();
 //         .set_directory(&new_input)
 //         .pick_folder();
