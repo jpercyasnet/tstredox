@@ -1,4 +1,5 @@
-use rfd::FileDialog;
+// use rfd::FileDialog;
+use native_dialog::FileDialog;
 use std::path::{Path, PathBuf};
 use std::process::Command as stdCommand;
 use std::fs::File;
@@ -16,8 +17,12 @@ pub fn excludepress (excludeval: String) -> (u32, String, String) {
          new_input = "/".to_string();
      }
      let newfile = FileDialog::new()
-         .set_directory(&new_input)
-         .pick_file();
+        .set_location(&new_input)
+        .show_open_single_file()
+        .unwrap();
+
+//         .set_directory(&new_input)
+//         .pick_file();
      if newfile == None {
          errstring = "error getting exclude file -- possible cancel key hit".to_string();
          errcode = 1;
