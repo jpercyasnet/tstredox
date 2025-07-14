@@ -2,6 +2,8 @@ extern crate exif;
 use std::fs;
 use std::path::Path;
 use std::env;
+extern crate walkdir;
+use walkdir::WalkDir;
 
 pub fn get_dirlistc (current_dir: String) -> (u32, String, String, Vec<String>) {
     let errcode: u32;
@@ -37,7 +39,8 @@ pub fn get_dirlistc (current_dir: String) -> (u32, String, String, Vec<String>) 
                  if metadata.is_file() {
                      orient = format!("file");
                  } else if metadata.is_dir() {
-                     orient = format!("dir");
+                     let path = format!("{}/{}", strpath, file_name);
+                     orient = format!("dir with {} items", WalkDir::new(path).into_iter().count());
                  } else {
                      orient = format!("{:?}", metadata.file_type());
                  }
