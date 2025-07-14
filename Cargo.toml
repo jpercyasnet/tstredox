@@ -11,7 +11,7 @@ default-features = false
 features = ["wgpu", "tiny-skia", "web-colors", "thread-pool", "smol"]
 
 [dependencies]
-native-dialog = "^0"
+rfd = "^0"
 chrono = "^0"
 walkdir = "^0"
 md5 = "^0"
