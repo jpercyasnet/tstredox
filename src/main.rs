@@ -36,7 +36,7 @@ fn main() -> iced::Result {
 //     } else {
 //         println!("**ERROR {} get_winsize: {}", errcode, errstring);
      }
-     iced::application(PhotoRot1080::update, PhotoRot1080::view)
+     iced::application(PhotoRot1080::new, PhotoRot1080::update, PhotoRot1080::view)
         .window_size((widthxx, heightxx))
         .theme(PhotoRot1080::theme)
 //        .subscription(ImageList::subscription)
