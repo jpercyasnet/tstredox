@@ -12,5 +12,4 @@ features = ["wgpu", "tiny-skia", "web-colors", "thread-pool", "smol"]
 
 [dependencies]
 kamadak-exif = "^0"
-image = "^0"
 walkdir = "^0"
