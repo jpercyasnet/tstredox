@@ -22,6 +22,7 @@ fn main() -> iced::Result {
      iced::application(FileDialogX::new, FileDialogX::update, FileDialogX::view)
         .window_size((widthxx, heightxx))
         .theme(FileDialogX::theme)
+        .title(FileDialogX::title)
         .run()
 
 }
