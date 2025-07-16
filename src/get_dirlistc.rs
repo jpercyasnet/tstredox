@@ -20,20 +20,6 @@ pub fn get_dirlistc (current_dir: String, getdiritemb: bool) -> (u32, String, St
         strpath = env::current_dir().expect("REASON").into_os_string().into_string().unwrap();
         new_path = Path::new(&strpath);
     }
-    if let Ok(metadata) = fs::metadata(&strpath) {
-        if let Ok(permissions) = metadata.permissions().readonly() {
-            if permissions {
-                println!("Directory has write permissions");
-            } else {
-                println!("Directory does not have write permissions");
-            }
-        } else {
-            println!("Unable to retrieve permissions information");
-        } 
-    } else {
-        println!("Directory does not exist or is inaccessible");
-    }
-
     let mut numentry = 0;
     let listin: String;
     match new_path.parent() {
